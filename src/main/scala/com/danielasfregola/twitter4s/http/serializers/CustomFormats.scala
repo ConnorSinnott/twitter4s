@@ -2,16 +2,18 @@ package com.danielasfregola.twitter4s.http.serializers
 
 import java.time._
 
+import com.danielasfregola.twitter4s.entities.ProfileImage
 import com.danielasfregola.twitter4s.entities.enums.DisconnectionCode
 import com.danielasfregola.twitter4s.entities.enums.DisconnectionCode.DisconnectionCode
-import com.danielasfregola.twitter4s.entities.ProfileImage
+import com.danielasfregola.twitter4s.entities.v2.Place
 import org.json4s.JsonAST.{JInt, JLong, JNull, JString}
-import org.json4s.{CustomSerializer, Formats}
+import org.json4s.native.JsonMethods._
+import org.json4s.{CustomSerializer, Extraction, Formats, JObject}
 
 private[twitter4s] object CustomFormats extends FormatsComposer {
 
   override def compose(f: Formats): Formats =
-    f + InstantSerializer + LocalDateSerializer + DisconnectionCodeSerializer + ProfileImageSerializer + ZonedDateTimeSerializer
+    f + InstantSerializer + LocalDateSerializer + DisconnectionCodeSerializer + ProfileImageSerializer + ZonedDateTimeSerializer + PlaceV2Serializer
 
 }
 
@@ -65,4 +67,27 @@ private[twitter4s] case object ProfileImageSerializer
         case JNull      => null
       }, {
         case img: ProfileImage => JString(img.normal)
-      }))
+      })
+    )
+
+/**
+  * Twitter provides the `geo` field of `Place` formatted to the
+  * <a href="https://geojson.org/">GeoJSON</a> specification. Rather
+  * than introducing another dependency to deserialize this field,
+  * we'll map it as a String so that consumers can deserialize it
+  * using the library of their choice.
+  */
+private[twitter4s] case object PlaceV2Serializer
+  extends CustomSerializer[Place](_ =>
+    ({
+      case jsonObj =>
+        implicit val format = org.json4s.DefaultFormats
+        jsonObj.transformField {
+          case ("geo", geo@JObject(_)) => ("geo", JString(compact(render(geo))))
+        }.extract[Place]
+    }, {
+      case place: Place =>
+        implicit val format = org.json4s.DefaultFormats
+        Extraction.decompose(place)
+    })
+  )

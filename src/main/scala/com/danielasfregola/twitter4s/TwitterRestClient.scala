@@ -60,6 +60,7 @@ trait RestClients
     with TwitterSuggestionClient
     with TwitterTrendClient
     with TwitterUserClient
+    with TwitterRestV2Client
 
 object TwitterRestClient {
 

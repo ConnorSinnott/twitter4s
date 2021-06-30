@@ -1,0 +1,58 @@
+{
+  "data": [
+    {
+      "geo": {
+        "place_id": "0fc2bbe1f995b000"
+      },
+      "id": "1410697282811568128",
+      "text": "Looking forward to some games! #games"
+    },
+    {
+      "id": "1407529765767159809",
+      "text": "I got 10 out of 10 questions right on day 1 of #DragaliaLost Trivia Week! During the event, followers of @DragaliaLostApp or @dragalialost who tweet their quiz results to #DragaliaLostTriviaWeek and #NintendoContest have a chance to receive 1,200 wyrmite!\n https://t.co/ocj9xVwuc2"
+    },
+    {
+      "id": "1377517348505149443",
+      "text": "Hmph! #DragaliaLostDoggo #NintendoContest https://t.co/0u0Kgh8rGl"
+    },
+    {
+      "id": "1374982706573012992",
+      "text": "RT @dragalialost: 【祝！#ドラガリ2年半】\n @dragalialostをフォローしてこの投稿をRT！\n ダブルチャンスの応募が完了します！\n 1. RT数に応じて増えるゲーム内プレゼント（全員）\n 2. ドラフェスVer.のキャラ13種類、★5ドラゴン78種…"
+    },
+    {
+      "id": "1374982588968931329",
+      "text": "RT @DragaliaLostApp: It's the 2.5-Year Anniversary of #DragaliaLost! Follow and retweet this post for a chance to win the following. All pl…"
+    },
+    {
+      "id": "1356759669226827778",
+      "text": "RT @DragaliaLostApp: Celebrate the Caged Desire event in #DragaliaLost! Follow and retweet this post for a chance to win the following. All…"
+    },
+    {
+      "id": "1356759580211109891",
+      "text": "RT @dragalialost: イベント「PERSONA5 SCRAMBLE Desire Lost」開催記念！\nフォローしてこの投稿をRT！\n1. RT数に応じて増えるアイテム（全員）\n2. 4段階上限解放済み★5ドラゴン75種類1体ずつ（3名様）\n▼本キャンペーンの詳細…"
+    }
+  ],
+  "includes": {
+    "places": [
+      {
+        "full_name": "Two-Bit's Retro Arcade",
+        "geo": {
+          "type": "Feature",
+          "bbox": [
+            -73.9872138639517,
+            40.72083090861322,
+            -73.9872138639517,
+            40.72083090861322
+          ],
+          "properties": {}
+        },
+        "id": "0fc2bbe1f995b000"
+      }
+    ]
+  },
+  "meta": {
+    "oldest_id": "1356759580211109891",
+    "newest_id": "1410697282811568128",
+    "result_count": 7
+  }
+}
